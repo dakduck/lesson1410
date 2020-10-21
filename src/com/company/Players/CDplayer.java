@@ -1,5 +1,7 @@
 package com.company.Players;
 
+import com.company.Storage.CDdisc;
+import com.company.Storage.Cassette;
 import com.company.Storage.Storage;
 
 /**
@@ -25,7 +27,7 @@ public class CDplayer implements Player {
      * @param s - носитель
      */
     public CDplayer(Storage s) {
-        if (s.getName().equals("CompactDisc")) {
+        if (s instanceof CDdisc) {
             this.store = s;
         } else {
             System.out.printf("%17s | DOESN'T support %s\n", this.name, s.getName());

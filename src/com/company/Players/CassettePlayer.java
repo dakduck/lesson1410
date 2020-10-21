@@ -1,5 +1,6 @@
 package com.company.Players;
 
+import com.company.Storage.Cassette;
 import com.company.Storage.Storage;
 
 /**
@@ -25,7 +26,7 @@ public class CassettePlayer implements Player {
      * @param s - носитель
      */
     public CassettePlayer(Storage s) {
-        if (s.getName().equals("Cassette")) {
+        if (s instanceof Cassette) {
             this.store = s;
         } else {
             System.out.printf("%17s | DOESN'T support %s\n", this.name, s.getName());

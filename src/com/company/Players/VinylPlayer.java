@@ -1,6 +1,8 @@
 package com.company.Players;
 
+import com.company.Storage.Cassette;
 import com.company.Storage.Storage;
+import com.company.Storage.Vinyl;
 
 /**
  * Класс винилового проигрывателя со свойством <b>store</b>
@@ -25,7 +27,7 @@ public class VinylPlayer implements Player {
      * @param s - носитель
      */
     public VinylPlayer(Storage s) {
-        if (s.getName().equals("Vinyl")) {
+        if (s instanceof Vinyl) {
             this.store = s;
         } else {
             System.out.printf("%17s | DOESN'T support %s\n", this.name, s.getName());

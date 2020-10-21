@@ -1,5 +1,7 @@
 package com.company.Players;
 
+import com.company.Storage.Cassette;
+import com.company.Storage.FlashDrive;
 import com.company.Storage.Storage;
 
 /**
@@ -25,7 +27,7 @@ public class FlashPlayer implements Player {
      * @param s - носитель
      */
     public FlashPlayer(Storage s) {
-        if (s.getName().equals("USB")) {
+        if (s instanceof FlashDrive) {
             this.store = s;
         } else {
             System.out.printf("%17s | DOESN'T support %s\n", this.name, s.getName());
